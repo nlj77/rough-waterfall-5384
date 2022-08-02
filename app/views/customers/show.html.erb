@@ -1,0 +1,8 @@
+<h1> Customer Show Page: </h1>
+<h3> <%= @customer.name %> </h3>
+
+<h3> This customer's items </h3>
+<% @customer.items.each do |item| %>
+<p><%= item.name %> <%= number_to_currency(item.price) %> </p>
+<% end %>
+<h3> Total Cost: <%= number_to_currency(@customer.items.total_cost) %> </h3>
